@@ -1,12 +1,11 @@
 # Loïc Bélec – CV Interactif
 
-Bienvenue sur la version interactive de mon CV. Ce dépôt présente mon parcours professionnel dans un format numérique, clair et structuré.
+Bienvenue sur le dépôt de mon CV interactif. Celui-ci présente mon parcours professionnel dans un format numérique et illustré.
 
 🔗 [loicbelec.com](https://loicbelec.com)  
 📍 Paris, France  
 📧 network@loicbelec.com
 
----
 
 ## À propos
 
@@ -19,40 +18,6 @@ Spécialisé en :
 - Gouvernance, FinOps et sécurité des environnements data
 - Encadrement d’équipe (cloud, data engineering, DevOps)
 
----
-
-## Expérience récente
-
-**Alpine F1 Team** – Cloud & Data Solutions Architect  
-*2018 – Aujourd’hui*  
-- Conception d’un Data Lake sur Azure  
-- Intégration de SAP, 3DEXPERIENCE, et systèmes internes  
-- Déploiement de modèles de machine learning  
-- Pilotage d’une équipe de 6 personnes
-
-**Renault F1 Team** – Data Engineer  
-*2014 – 2018*  
-- Développement de pipelines ETL  
-- Création d’un framework MATLAB pour l’analyse en Grand Prix  
-- Intégration des données moteur et télémétrie
-
----
-
-## Stack technique
-
-- **Langages** : Python, SQL, Rust, Shell, MATLAB  
-- **Cloud & Data** : Azure, Synapse, Data Factory, Terraform, Spark, Kafka  
-- **Méthodes** : DevSecOps, CI/CD, FinOps, IaC
-
----
-
-## Formation
-
-- Diplôme d’Ingénieur – Arts & Métiers ParisTech  
-- MSc – Tongji University (Shanghai)  
-- Formation Machine Learning – CentraleSupélec
-
----
 
 ## Contact
 
