@@ -96,6 +96,21 @@
                         <a class="social-icon" href="/assets/BELEC-Loic_CV_FR_2025.pdf" target="_blank" title="Download my French CV 🇫🇷"><i class="fas fa-file-pdf"></i></a>
                         <a class="social-icon" href="/assets/BELEC-Loic_CV_EN_2025.pdf" target="_blank" title="Download my English CV 🇬🇧"><i class="fas fa-file-pdf"></i></a>
                     </div>
+                    
+                    <!-- Projets techniques récents -->
+                    <div class="bg-light p-4 rounded border mt-5">
+                        <h4 class="fw-semibold mb-4">Recent Technical Projects</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                            <h5 class="fw-bold">RAG System + LoRA</h5>
+                            <p>Deployed a LLM model connected to the enterprise knowledge graph, enabling <strong>natural language queries</strong> on business data. Fine-tuned a custom <strong><a href="https://huggingface.co/learn/llm-course/chapter11/4">LoRA model</a></strong> locally to enhance domain-specific performance.</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                            <h5 class="fw-bold">Rust CLI for ETL</h5>
+                            <p>Developed a <strong>Rust-based command-line tool</strong> to accelerate ETL workflows and reduce pipeline latency. Focused on memory-efficient multithreading and seamless integration with orchestration layers.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <hr class="m-0" />
@@ -108,20 +123,16 @@
                             <h3 class="mb-0">Cloud & Data Solutions Architect – Technical Manager</h3>
                             <div class="subheading mb-3">Alpine Racing</div>
                             <p>I lead the design and operation of Alpine Racing’s <b>hybrid data infrastructure</b>, combining on-premise systems with Microsoft Azure to support real-time analytics, manufacturing operations, and advanced engineering workflows in a high-performance environment (Formula 1, Le Mans).</p>
-                            <p>My responsibilities include defining enterprise cloud strategy, ensuring architectural alignment with business and regulatory imperatives, and enabling seamless data integration across SAP, 3DEXPERIENCE, telemetry systems, and other legacy databases, orchestrated via <b>Azure Data Factory</b> and modular pipelines.</p>
-                            <p>I manage a team of six (cloud architects, data engineers, DevOps specialists) and act as technical lead for:</p>
+                            <p>My responsibilities include defining <b>enterprise cloud strategy</b>, ensuring architectural alignment with business and regulatory imperatives, and enabling seamless data integration across SAP, 3DEXPERIENCE, telemetry systems, and other legacy databases - orchestrated via Azure Data Factory and modular pipelines.</p>
+                            <p>I’ve also initiated exploratory work around GCP <b>workload migration</b>, to assess the viability of a multi-cloud strategy in line with Alpine’s long-term platform objectives.</p>
+                            <p>I manage a team of six (cloud architects, data engineers, DevOps specialists) and act as technical lead, with responsibilities including:</p>
                             <ul>
-                                <li><strong>Cloud & Network Architecture</strong><br />Designed a centralized Data Lake aligned with enterprise architecture principles (TOGAF, Azure Well-Architected Framework), and implemented a secure hub-and-spoke topology with <i>Express Route</i> for high-throughput, low-latency connectivity.</li>
-                                <li><strong>Hybrid Cloud Governance</strong><br />Operate a dual environment (on-prem + Azure), integrating <b>DevSecOps</b>, <b>FinOps</b>, and <b>GDPR</b> controls. Defined governance structures in coordination with security, compliance, and IT stakeholders.</li>
-                                <li><strong>Infrastructure as Code & CI/CD</strong><br />Standardized cloud environments using <b>Terraform</b>, <b>Helm</b>, <b>GitOps</b>, and Azure DevOps. Automated deployments and embedded policy-as-code across the stack.</li>
-                                <li><strong>Data Transformation & Orchestration</strong><br />Built modular ingestion pipelines with <b>Azure Data Factory</b>, integrating <b>dbt</b> for transformation workflows and data contract enforcement. Enabled versioning, SLA tracking, and testable models for critical business datasets.</li>
-                                <li><strong>AI & Semantic Data Layer</strong><br />Developed ML models for anomaly detection and predictive maintenance. Built a <b>GPT-powered RAG</b> system over the data lake and a semantic knowledge graph to allow natural language querying by engineers.</li>
-                                <li><strong>Enterprise Alignment & Leadership</strong><br />Acted as architecture referent for technical boards and strategic programs driven by the executive committee. Promoted modern cloud-native and data mesh principles, enabling cross-functional alignment around sustainable, scalable designs.</li>
-                            </ul>
-                            <p>Recent technical highlights:</p>
-                            <ul>
-                                <li><strong>Rust CLI development</strong><br />Currently building a high-performance command-line interface in Rust to reduce latency across ETL pipelines — part of an ongoing effort to deepen my expertise in systems-level optimization.</li>
-                                <li><strong>Purview & data contracts</strong><br />Deployed Microsoft Purview for data classification, lineage, and access control; introduced <b>data contracts</b> to support governed ingestion and schema evolution.</li>
+                                <li>Designed a <b>centralized data lake</b> aligned with enterprise architecture principles (TOGAF, Azure Well-Architected Framework), and implemented a secure hub-and-spoke topology with <i>Express Route</i> for high-throughput, low-latency connectivity.</li>
+                                <li>Operate a dual environment (on-prem + Azure), integrating <b>DevSecOps, FinOps, and GDPR</b> controls. Defined governance structures in coordination with security, compliance, and IT stakeholders.</li>
+                                <li>Standardized cloud environments using <b>Terraform, Helm, GitOps</b>, and Azure DevOps. Automated deployments and embedded policy-as-code across the stack.</li>
+                                <li>Built modular ingestion pipelines with <b>Azure Data Factory</b>, integrating dbt for transformation workflows and data contract enforcement. Enabled versioning, SLA tracking, and testable models for critical business datasets.</li>
+                                <li>Built a <b>semantic knowledge graph</b> connected to the enterprise data lake, and developed a <b>LLM-powered RAG system</b> to enable engineers to perform natural language queries across business and technical datasets.</li>
+                                <li>Acted as <b>architecture referent</b> for technical boards and strategic programs driven by the executive committee. Promoted modern cloud-native and <b>data mesh</b> principles, enabling cross-functional alignment around sustainable, scalable designs.</li>
                             </ul>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">January 2023 - Present</span></div>
