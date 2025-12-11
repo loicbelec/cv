@@ -1,279 +1,630 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Loïc Bélec – Data Architect blending precision engineering, cloud infrastructure, and AI. Currently shaping Alpine F1 Team’s data strategy.">
-        <meta name="author" content="Loïc Bélec" />
-        <title>Loïc Bélec - Cloud & Data Architect blending performance & precision</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <style>
-            .header-image {
-                width: 100%;
-                max-width: 1600px;
-                margin: 0 auto;
-                display: block;
-                height: auto;
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loïc Bélec | Enterprise Cloud & Data Architect</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="F1-grade Data Architect. Managing PFLOP-scale compute and hybrid cloud platforms.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        f1: {
+                            dark: '#0B0F19',   // Fond principal (Chassis carbone)
+                            panel: '#151B2B',  // Panneaux (Éléments UI)
+                            blue: '#0090FF',   // Bleu Alpine vibrant
+                            cyan: '#00F0FF',   // Cyan Télémétrie/Data
+                            accent: '#FF004E', // Accent "Redline"
+                            text: '#E2E8F0',   // Texte lisible
+                            muted: '#94A3B8'   // Texte secondaire
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'grid-flow': 'gridMove 20s linear infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        gridMove: {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(40px)' },
+                        }
+                    }
+                }
             }
-            .interests-image {
-                width: 75%;
-                max-width: 1600px;
-                margin: 0 auto;
-                display: block;
-                height: auto;
-            }
-            .social-icons {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 20px;
-            }
-            .social-icon {
-                color: #FFF;
-                font-size: 1.5rem;
-                transition: color 0.3s ease;
-            }
-            .social-icon:hover {
-                color: #FFF; /* Bootstrap primary color */
-            }
-            .icon-50 {
-                height: 50px;
-                width: auto;
-                object-fit: contain;
-                filter: grayscale(100%);
-                transition: filter 0.3s ease;
-            }
-            .icon-50:hover {
-                filter: none;
-            }
-        </style>
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Loïc Bélec</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#recent-projects">Recent Projects</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-                </ul>
+        }
+    </script>
+
+    <style>
+        /* Scrollbar Personnalisée (Style Dashboard) */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0090FF; }
+
+        /* Effet de Grille en arrière-plan */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+        }
+
+        /* Effet Verre (Glassmorphism) */
+        .glass {
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Effet "Glow" sur les cartes au survol */
+        .card-glow {
+            transition: all 0.3s ease;
+        }
+        .card-glow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(0, 144, 255, 0.1);
+            border-color: rgba(0, 144, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-f1-dark text-f1-text font-sans antialiased overflow-x-hidden selection:bg-f1-blue selection:text-white">
+
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="font-mono text-f1-cyan font-bold text-lg group-hover:text-white transition-colors">&lt;LB /&gt;</span>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 font-mono text-xs tracking-wider">
+                        <a href="#key-figures" class="hover:text-f1-cyan transition-colors">METRICS</a>
+                        <a href="#experience" class="hover:text-f1-cyan transition-colors">CAREER_TRACE</a>
+                        <a href="#projects" class="hover:text-f1-cyan transition-colors">PROTOTYPES</a>
+                        <a href="#stack" class="hover:text-f1-cyan transition-colors">STACK</a>
+                        <a href="mailto:network@loicbelec.com" class="border border-f1-blue text-f1-blue px-4 py-2 rounded hover:bg-f1-blue hover:text-white transition-all">
+                            INIT_CONTACT
+                        </a>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Loïc
-                        <span class="text-primary">Bélec</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        ☁️ Principal Cloud & Data Architect<br />
-                        📍75013 Paris · 
-                        📧 <a href="mailto:network@loicbelec.com">network@loicbelec.com</a>
-                    </div>
-                    <p class="lead mb-5">Experienced cloud & data architect with over 10 years in a demanding, data-intensive environment: <b>Formula 1</b>. Specialized in cloud infrastructure, data engineering, and solution architecture. Proven experience in team management and strong commitment to implementing scalable, secure systems aligned with business needs.</p>
-                    <p class="lead mb-5">Currently shaping the data strategy for <b><a href="https://www.alpinecars.fr/racing.html">Alpine Racing</a></b>, I blend precision and tailor-made engineering with cloud-native solutions to drive performance and innovation in a high-pressure environment. <b>Ready to shift gears</b>.</p>
-                    <p><img src="/assets/img/alpine-cars.png" alt="AI generated image of the evolution of my career" class="header-image"></p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/loicbelec/" title="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/loicbelec" title="GitHub profile"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="/assets/BELEC-Loic_CV_FR_2025.pdf" target="_blank" title="Download my French CV 🇫🇷"><i class="fas fa-file-pdf"></i></a>
-                        <a class="social-icon" href="/assets/BELEC-Loic_CV_EN_2025.pdf" target="_blank" title="Download my English CV 🇬🇧"><i class="fas fa-file-pdf"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Principal Cloud & Data Architect - Head of Data Platform</h3>
-                            <div class="subheading mb-3">Alpine Racing</div>
-                            <p>I lead the design and operation of Alpine Racing’s <b>hybrid data infrastructure</b>, combining on-premise systems with Microsoft Azure to support real-time analytics, manufacturing operations, and advanced engineering workflows in a high-performance environment (Formula 1, Le Mans).</p>
-                            <p>My responsibilities include defining <b>enterprise cloud strategy</b>, ensuring architectural alignment with business and regulatory imperatives, and enabling seamless data integration across SAP, 3DEXPERIENCE, telemetry systems, and other legacy databases - orchestrated via Azure Data Factory and modular pipelines.</p>
-                            <p>I’ve also initiated exploratory work around GCP <b>workload migration</b>, to assess the viability of a multi-cloud strategy in line with Alpine’s long-term platform objectives.</p>
-                            <p>I manage a team of six (cloud architects, data engineers, DevOps specialists) and act as technical lead, with responsibilities including:</p>
-                            <ul>
-                                <li>Designed a <b>centralized data platform</b> aligned with enterprise architecture principles (TOGAF, Azure Well-Architected Framework), and implemented a secure hub-and-spoke topology with <i>Express Route</i> for high-throughput, low-latency connectivity.</li>
-                                <li>Operate a dual environment (on-prem + Azure), integrating <b>DevSecOps, FinOps, and GDPR</b> controls. Defined governance structures in coordination with security, compliance, and IT stakeholders.</li>
-                                <li>Standardized cloud environments using <b>Terraform, Helm, GitOps</b>, and Azure DevOps. Automated deployments and embedded policy-as-code across the stack.</li>
-                                <li>Built modular ingestion pipelines with <b>Azure Data Factory</b>, integrating dbt for transformation workflows and data contract enforcement. Enabled versioning, SLA tracking, and testable models for critical business datasets.</li>
-                                <li>Built a <b>semantic knowledge graph</b> connected to the enterprise data platform, and developed a <b>LLM-powered RAG system</b> to enable engineers to perform natural language queries across business and technical datasets.</li>
-                                <li>Acted as <b>architecture referent</b> for technical boards and strategic programs driven by the executive committee. Promoted modern cloud-native and <b>data mesh</b> principles, enabling cross-functional alignment around sustainable, scalable designs.</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">January 2023 - Present</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">High-Performance Data Platform Architect</h3>
-                            <div class="subheading mb-3">Alpine F1 Team</div>
-                            <p>I led the architecture and deployment of a high-frequency data platform based on <b>kdb+ and q</b>, technologies originally developed for real-time trading. The platform aggregated data from <b>track telemetry, test benches, wind tunnel, and simulator</b>, enabling engineering teams to monitor and analyze performance in real time.</p>
-                            <p>To build this system, I conducted a detailed benchmark of various technologies (IBM Watson, InfluxDB, Azure Data Explorer, and others), ultimately selecting kdb+ for its performance and scalability. I was responsible for the entire Azure infrastructure — development, test, and production environments — and implemented <b>infrastructure-as-code</b> using <b>Terraform</b>.</p>
-                            <p>I also managed <b>Kafka integration</b> across the two factories and at the track to ensure low-latency data streams. On the modeling side, I co-defined the <b>data architecture</b> to reflect engine-specific constraints, collaborating with my UK counterpart who led the chassis/aero scope.</p>
-                            <p>As the technical lead, I translated engineering requirements into data specifications, drawing on my earlier experience as a data engineer within the design office. Finally, I took charge of <b>FinOps</b>, aligning cloud cost structures with the seasonal and operational rhythms of the team.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">July 2018 - December 2022</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Data Engineer</h3>
-                            <div class="subheading mb-3">Renault Sport F1</div>
-                            <p>At Renault Sport F1, I engineered robust ETL pipelines to consolidate data from <b>CFD simulations, track telemetry, and engine test benches</b>, laying the groundwork for a more unified data infrastructure.</p>
-                            <p>I developed a modular MATLAB framework tailored for real-time analysis in race environments, and standardized processing workflows to build a stronger <b>data culture</b> among engineers. By integrating <b>SAP, SQL databases, and Atlas</b>, I enabled predictive modeling of engine components, with a strong focus on energy efficiency and actionable performance insights.</p>
-                            <p>I also led the automation of performance reporting for Grand Prix weekends, accelerating insight generation and supporting strategic decision-making under pressure.</p>
-                            <div class="bg-light p-3 rounded mt-4">
-                            <h5 class="fw-semibold mb-2">Symphony Operational Toolbox</h5>
-                                <p>One of the most impactful outcomes of this experience was a <b>MATLAB-based, object-oriented analysis toolbox</b>, which I designed to support race operations with robust, reusable components. This tool remains in use today and is widely recognized within the F1 engineering community for its adaptability across various performance workflows.</p>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">February 2014 - June 2018</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">                    
-                    <p><img src="/assets/img/cars.png" alt="AI generated image of the evolution of my career" class="header-image"></p>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Researcher – Master’s Project</h3>
-                            <div class="subheading mb-3">Tongji University</div>
-                            <p>As part of my research at Tongji University, I focused on U-shaped assembly line balancing (U-ALBP), exploring both theoretical models and industrial applications.</p>
-                            <p>I implemented and benchmarked optimization algorithms —including Ant Colony Optimization— in MATLAB, conducting comparative case studies to evaluate performance across different manufacturing scenarios.</p>
-                            <p>This work led to a <b><a href="https://link.springer.com/book/10.2991/978-94-6239-102-4">peer-reviewed publication</a></b> at the 21st International Conference on Industrial Engineering and Engineering Management.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2012 - December 2013</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Recent Technical Projects -->
-            <section class="resume-section" id="recent-projects">
-                <div class="resume-section-content">
-                <h2 class="mb-5">Recent Technical Projects</h2>
-                <p>Beyond leading architectural strategy, I actively prototype and validate emerging technologies to ensure their viability before enterprise adoption. These hands-on projects reflect my commitment to high-performance data systems, precision engineering, and cloud-native design in high-stakes environments.</p>
-                <div class="bg-light p-4 rounded border mt-5">
-                    <div class="row">
-                        <div class="col-md-6 mb-4 text-center">
-                            <img src="/assets/img/lora-alpine.png" alt="RAG System + LoRA" class="img-fluid rounded mb-3 shadow-sm" style="max-height: 200px; object-fit: contain;">
-                            <h5 class="fw-bold">RAG System + LoRA</h5>
-                            <p>Deployed a LLM model integrated with an enterprise knowledge graph, enabling <strong>natural language querying</strong> of business data. Locally fine-tuned a custom <strong><a href="https://huggingface.co/learn/llm-course/chapter11/4">LoRA model</a></strong> to boost accuracy on domain-specific questions.</p>                        
-                        </div>
-                        <div class="col-md-6 mb-4 text-center">
-                            <img src="/assets/img/rust-cli-alpine.png" alt="Rust CLI for ETL" class="img-fluid rounded mb-3 shadow-sm" style="max-height: 200px; object-fit: contain;">
-                            <h5 class="fw-bold">Rust CLI for ETL</h5>
-                            <p>Developed a <strong>Rust-based command-line tool</strong> to accelerate ETL workflows and reduce pipeline latency. Focused on memory-efficient multithreading and seamless integration with orchestration layers.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Tongji, Shanghai</h3>
-                            <div class="subheading mb-3">MSc Industrial and Mechanical Engineering</div>
-                            <div>Top-tier Chinese university with strong international ties, particularly in engineering and applied research.</div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2012 - January 2014</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Arts & Métiers ParisTech, Paris</h3>
-                            <div class="subheading mb-3">Master’s Degree in General Engineering</div>
-                            <div>One of France’s leading engineering schools, renowned for its focus on industrial excellence, applied sciences, and innovation since 1780.</div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2010 - January 2014</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item" title="Azure"><img src="assets/icons/azure.svg" alt="Azure" class="icon-50"></li>
-                        <li class="list-inline-item" title="Terraform"><img src="assets/icons/terraform.svg" alt="Terraform" class="icon-50"></li>
-                        <li class="list-inline-item" title="Shell"><img src="assets/icons/shell.svg" alt="Shell" class="icon-50"></li>
-                        <li class="list-inline-item" title="Kubernetes"><img src="assets/icons/kubernetes.svg" alt="Kubernetes" class="icon-50"></li>
-                        <li class="list-inline-item" title="Docker"><img src="assets/icons/docker.svg" alt="Docker" class="icon-50"></li>
-                        <li class="list-inline-item" title="Kafka"><img src="assets/icons/kafka.svg" alt="Kafka" class="icon-50"></li>
-                        <li class="list-inline-item" title="Python"><img src="assets/icons/python.svg" alt="Python" class="icon-50"></li>
-                        <li class="list-inline-item" title="Rust"><img src="assets/icons/rust.svg" alt="Rust" class="icon-50"></li>
-                        <li class="list-inline-item" title="Matlab"><img src="assets/icons/matlab.svg" alt="Matlab" class="icon-50"></li>
-                        <li class="list-inline-item" title="Spark"><img src="assets/icons/spark.svg" alt="Spark" class="icon-50"></li>
-                        <li class="list-inline-item" title="SQL"><img src="assets/icons/sql.svg" alt="SQL" class="icon-50"></li>
-                    </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li><span class="fa-li"><i class="fas fa-lightbulb"></i></span>Business need analysis & use case framing</li>
-                        <li><span class="fa-li"><i class="fas fa-sitemap"></i></span>Data architecture design (cloud-native, secure, scalable)</li>
-                        <li><span class="fa-li"><i class="fas fa-project-diagram"></i></span>System integration (SAP, 3DEXPERIENCE, legacy databases...)</li>
-                        <li><span class="fa-li"><i class="fas fa-database"></i></span>Data ingestion & transformation pipelines (ETL/ELT)</li>
-                        <li><span class="fa-li"><i class="fas fa-cogs"></i></span>Infrastructure as Code (Terraform, CI/CD, DevSecOps)</li>
-                        <li><span class="fa-li"><i class="fas fa-brain"></i></span>Knowledge layer & semantic modeling</li>
-                        <li><span class="fa-li"><i class="fas fa-chart-line"></i></span>Data activation: reporting, analytics, ML use cases</li>
-                        <li><span class="fa-li"><i class="fas fa-shield-alt"></i></span>Governance, security, GDPR compliance (Microsoft Purview)</li>
-                        <li><span class="fa-li"><i class="fas fa-users-cog"></i></span>Team leadership & stakeholder alignment</li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section id="interests" class="resume-section">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>I’m an avid photographer, working primarily with a Fujifilm X-Pro2. My approach is influenced by film aesthetics — I pay close attention to natural light, composition, and color rendering. <a href="https://500px.com/photo/11480781/石林-by-loic-belec">My work</a> has been exhibited in Paris, notably at Place Saint-Sulpice in collaboration with <em>Le Monde</em>. Photography allows me to slow down and observe what others might miss — a discipline not so different from data modeling.</p>
-                    <p>I practice powerlifting, a sport that has taught me discipline, focus, and resilience. My current total stands at 560 kg in the -93 kg category. The structure and consistency required by this discipline echo the mental clarity I bring to architectural decision-making and team leadership.</p>
-                    <p>Every day, I cycle through Paris. It's a deliberate choice — I value the efficiency, simplicity, and quiet rhythm it brings. I maintain my bike myself, the same way I fine-tune the tools I work with: methodically, precisely, with care.</p>
-                    <p>I'm also passionate about gastronomy — from star restaurants to quiet local bistros. I look for dishes where balance, respect for ingredients, and thoughtful execution come together.</p>
-                    <p>Finally, I’m drawn to languages and cultures. I speak fluent English and have an upper-intermediate level in Mandarin Chinese, which I deepened during a research project at Tongji University in Shanghai. This cross-cultural perspective continues to shape the way I design systems — both technical and human.</p>
-                    <img src="/assets/img/frtocn.png" alt="IA generated image of me going to China" class="interests-image">
-                </div>
-            </section>
-            <hr class="m-0" />
-             <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            CSC Scolarship, issued by Chinese Scolarship Council
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Prix de la Photographie des Maisons du Voyage 2012, exhibition by <i>Le Monde</i>
-                        </li>
-                    </ul>
-                </div>
-            </section>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <div class="absolute inset-0 bg-grid animate-grid-flow opacity-60 z-0"></div>
+        <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-f1-blue/5 to-transparent z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <div class="inline-flex items-center px-3 py-1 mb-6 border border-f1-cyan/30 bg-f1-cyan/5 rounded-full">
+                    <div class="w-2 h-2 bg-f1-cyan rounded-full mr-2 animate-pulse"></div>
+                    <span class="font-mono text-xs text-f1-cyan tracking-widest">SYSTEM ONLINE // PARIS</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-white">
+                    Loïc Bélec
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-f1-blue to-f1-cyan mb-6">
+                    F1-Grade Architect
+                </h2>
+                
+                <div class="h-8 mb-8 font-mono text-f1-muted text-lg">
+                    <span class="text-f1-cyan">></span> <span id="typewriter"></span><span class="animate-pulse">_</span>
+                </div>
+
+                <p class="text-lg text-f1-muted mb-8 max-w-xl leading-relaxed">
+                    I design the nervous systems of high-performance organizations. From <strong>factory-to-cloud connectivity</strong> to <strong>PFLOP-scale compute</strong>, I build platforms where performance, reliability, and governance coexist under race-day constraints.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="#experience" class="bg-f1-blue text-white px-8 py-3 rounded font-medium hover:bg-blue-600 transition-colors shadow-[0_0_20px_rgba(0,144,255,0.3)]">
+                        View Telemetry
+                    </a>
+                    <a href="https://www.linkedin.com/in/loicbelec" target="_blank" class="border border-slate-600 text-slate-300 px-8 py-3 rounded font-medium hover:border-f1-cyan hover:text-f1-cyan transition-colors flex items-center">
+                        <i class="fab fa-linkedin mr-2"></i> Network
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative hidden lg:block group perspective-1000">
+                <div class="absolute -inset-1 bg-gradient-to-r from-f1-cyan to-f1-blue rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-700"></div>
+                <div class="relative rounded-lg overflow-hidden border border-white/10 glass p-2 transform transition-transform duration-500 group-hover:rotate-1">
+                    <img src="assets/img/profile-large.jpg" alt="Loïc Bélec" class="rounded w-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    
+                    <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur border-l-2 border-f1-cyan px-4 py-2 shadow-lg">
+                        <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Current Role</div>
+                        <div class="font-bold text-white text-sm">Head of Data Platform</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="key-figures" class="py-20 bg-f1-panel border-y border-white/5 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-tachometer-alt text-f1-blue mr-3"></i> System Metrics
+                </h2>
+                <div class="h-px bg-white/10 flex-grow ml-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-6 bg-f1-dark border border-white/5 rounded hover:border-f1-blue/50 transition-colors group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-mono text-f1-muted">THROUGHPUT</span>
+                        <i class="fas fa-database text-f1-blue/50 group-hover:text-f1-blue transition-colors"></i>
+                    </div>
+                    <div class="text-4xl font-mono font-bold text-white mb-1 group-hover:text-f1-cyan transition-colors">
+                        <span class="counter" data-target="3.2">0</span> <span class="text-lg">PB/yr</span>
+                    </div>
+                    <p class="text-xs text-f1-muted">Factory-to-Cloud (ExpressRoute)</p>
+                    <div class="w-full bg-slate-800 h-1 mt-4 rounded overflow-hidden">
+                        <div class="bg-f1-cyan h-full w-[80%] shadow-[0_0_10px_#00F0FF]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-f1-dark border border-white/5 rounded hover:border-f1-blue/50 transition-colors group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-mono text-f1-muted">STREAMING</span>
+                        <i class="fas fa-wave-square text-f1-blue/50 group-hover:text-f1-blue transition-colors"></i>
+                    </div>
+                    <div class="text-4xl font-mono font-bold text-white mb-1 group-hover:text-f1-cyan transition-colors">
+                        <span class="counter" data-target="20">0</span> <span class="text-lg">M/s</span>
+                    </div>
+                    <p class="text-xs text-f1-muted">Samples per Second (Peak)</p>
+                    <div class="w-full bg-slate-800 h-1 mt-4 rounded overflow-hidden">
+                        <div class="bg-f1-blue h-full w-[90%] shadow-[0_0_10px_#0090FF]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-f1-dark border border-white/5 rounded hover:border-f1-blue/50 transition-colors group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-mono text-f1-muted">PEAK COMPUTE</span>
+                        <i class="fas fa-microchip text-f1-blue/50 group-hover:text-f1-blue transition-colors"></i>
+                    </div>
+                    <div class="text-4xl font-mono font-bold text-white mb-1 group-hover:text-f1-cyan transition-colors">
+                        <span class="counter" data-target="0.9">0</span> <span class="text-lg">PFLOP</span>
+                    </div>
+                    <p class="text-xs text-f1-muted">HB120rs_v3 Instances</p>
+                    <div class="w-full bg-slate-800 h-1 mt-4 rounded overflow-hidden">
+                        <div class="bg-purple-500 h-full w-[70%] shadow-[0_0_10px_#A855F7]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-f1-dark border border-white/5 rounded hover:border-f1-blue/50 transition-colors group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-mono text-f1-muted">CREDITS MANAGED</span>
+                        <i class="fas fa-coins text-f1-blue/50 group-hover:text-f1-blue transition-colors"></i>
+                    </div>
+                    <div class="text-4xl font-mono font-bold text-white mb-1 group-hover:text-f1-cyan transition-colors">
+                        £<span class="counter" data-target="1.2">0</span> <span class="text-lg">M</span>
+                    </div>
+                    <p class="text-xs text-f1-muted">FinOps Optimization</p>
+                    <div class="w-full bg-slate-800 h-1 mt-4 rounded overflow-hidden">
+                        <div class="bg-green-500 h-full w-[100%] shadow-[0_0_10px_#22C55E]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold mb-2">Career Telemetry</h2>
+            <p class="text-f1-muted">A timeline of escalating complexity: From engine metrics to enterprise architecture.</p>
+        </div>
+
+        <div class="relative border-l-2 border-slate-800 ml-3 md:ml-6 space-y-16">
+            
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-f1-blue shadow-[0_0_15px_#0090FF] ring-4 ring-f1-dark z-10"></div>
+                
+                <div class="p-8 bg-f1-panel border border-white/5 rounded-lg card-glow relative">
+                    <div class="absolute -top-3 right-6 bg-f1-blue text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg font-mono">
+                        CURRENT_ROLE
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-f1-cyan transition-colors">Head of Data Platform</h3>
+                        <div class="text-f1-blue font-mono text-sm mb-1">Alpine Racing (Renault Group)</div>
+                        <div class="text-xs text-slate-500 font-mono">JAN 2023 - PRESENT</div>
+                    </div>
+
+                    <p class="text-white mb-6 font-medium leading-relaxed border-l-2 border-f1-blue pl-4">
+                        Leading the design and operation of a <strong>hybrid data platform</strong>, merging on-premise factory systems with Azure to support Formula 1 & endurance programs under strict regulatory constraints.
+                    </p>
+
+                    <ul class="space-y-4 mb-8 text-f1-muted text-sm list-none">
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-f1-cyan mt-1 mr-3"></i>
+                            <span>
+                                Designed a secure <strong>hub-and-spoke network</strong> with 10 Gbps ExpressRoute, enabling <strong>~3.2 PB/year</strong> of data exchange between factory and cloud.
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-f1-cyan mt-1 mr-3"></i>
+                            <span>
+                                Structured a centralized lakehouse (Bronze/Silver/Gold) handling <strong>134 daily production pipelines</strong> and integrating 11 critical systems (SAP, 3DX, Telemetry).
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-f1-cyan mt-1 mr-3"></i>
+                            <span>
+                                Achieved <strong>80% classified data coverage</strong> using <strong>OpenMetadata</strong> (replacing legacy catalogs) & policy-as-code.
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-f1-cyan mt-1 mr-3"></i>
+                            <span>
+                                Managed cloud budgets (<strong>£1.2M credits</strong>) and a €480k professional services engagement, balancing performance with FinOps discipline.
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-f1-cyan mt-1 mr-3"></i>
+                            <span>
+                                Integrated HPC capabilities (up to <strong>200 HB120rs_v3 nodes</strong>, ~0.9 PFLOP) with storage pipelines for advanced simulation workloads.
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2 pt-6 border-t border-white/5">
+                        <span class="text-xs font-mono px-2 py-1 bg-f1-blue/10 text-f1-blue border border-f1-blue/20 rounded">Azure</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-f1-blue/10 text-f1-blue border border-f1-blue/20 rounded">Databricks</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-f1-blue/10 text-f1-blue border border-f1-blue/20 rounded">Synapse</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-f1-blue/10 text-f1-blue border border-f1-blue/20 rounded">OpenMetadata</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-f1-blue/10 text-f1-blue border border-f1-blue/20 rounded">Knowledge Graph</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-f1-blue/10 text-f1-blue border border-f1-blue/20 rounded">FinOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-slate-700 group-hover:bg-f1-cyan transition-colors ring-4 ring-f1-dark z-10"></div>
+                
+                <div class="p-8 bg-f1-panel border border-white/5 rounded-lg card-glow opacity-90 hover:opacity-100 transition-opacity">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-white">High-Performance Data Architect</h3>
+                        <div class="text-slate-300 font-mono text-sm mb-1">Alpine F1 Team</div>
+                        <div class="text-xs text-slate-500 font-mono">JUL 2018 - DEC 2022</div>
+                    </div>
+
+                    <div class="mb-6 flex items-center text-xs font-mono text-slate-400 border border-slate-700 rounded px-3 py-2 inline-block bg-black/20">
+                        <i class="fas fa-globe-europe text-f1-cyan mr-2"></i>
+                        <span>Cross-site Role: </span>
+                        <a href="https://www.google.com/maps/place/Alpine+Racing+Viry-Chatillon" target="_blank" class="ml-2 hover:text-white border-b border-dashed border-slate-600 hover:border-white transition-colors">Viry-Châtillon (FR)</a>
+                        <i class="fas fa-exchange-alt mx-2 text-f1-blue text-[10px]"></i>
+                        <a href="https://www.google.com/maps/place/Alpine+F1+Team" target="_blank" class="hover:text-white border-b border-dashed border-slate-600 hover:border-white transition-colors">Enstone (UK)</a>
+                    </div>
+                    
+                    <p class="text-slate-300 mb-6 text-sm">
+                        Architected the high-frequency telemetry platform combining <strong>kdb+</strong> and Azure to aggregate wind tunnel, simulator, and trackside data.
+                    </p>
+
+                    <ul class="space-y-3 mb-6 text-f1-muted text-sm list-none">
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-slate-500 mt-1 mr-3"></i>
+                            <span>Selected and implemented <strong>kdb+</strong> for its superior time-series performance over SQL/NoSQL alternatives.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-slate-500 mt-1 mr-3"></i>
+                            <span>Designed end-to-end infrastructure fully automated with <strong>Terraform & IaC</strong> best practices.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-slate-500 mt-1 mr-3"></i>
+                            <span>Integrated <strong>Kafka</strong> across factories and trackside for low-latency data ingestion (Peak: <strong>20M samples/sec</strong>).</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                        <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-400 rounded">kdb+ / q</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-400 rounded">Terraform</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-400 rounded">Kafka (20M/s)</span>
+                        <span class="text-xs font-mono px-2 py-1 bg-slate-800 text-slate-400 rounded">NetApp</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                 <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-f1-dark z-10"></div>
+                 <div class="p-6 bg-f1-panel border border-white/5 rounded-lg card-glow opacity-60 hover:opacity-100 transition-opacity">
+                     <h3 class="text-lg font-bold text-white">Data Engineer</h3>
+                     <div class="text-slate-400 font-mono text-sm mb-4">Renault F1 Team | 2014 - 2018</div>
+                     <ul class="space-y-3 text-slate-500 text-sm list-none">
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-slate-500 mt-1 mr-3"></i>
+                            <span>Consolidated CFD, telemetry and test-bench data into a unified structure.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-slate-500 mt-1 mr-3"></i>
+                            <span>Designed object-oriented <strong>MATLAB</strong> frameworks for race analysis still in use today.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-caret-right text-slate-500 mt-1 mr-3"></i>
+                            <span>Automated engine performance reporting, drastically reducing turnaround time.</span>
+                        </li>
+                     </ul>
+                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-f1-dark relative overflow-hidden border-t border-white/5">
+        <div class="absolute -right-20 top-20 w-96 h-96 bg-f1-blue/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl font-bold mb-12">Recent Prototypes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group relative bg-f1-panel rounded-xl overflow-hidden border border-white/5 hover:border-f1-cyan/50 transition-all duration-300">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="assets/img/lora-alpine.png" alt="RAG System" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur px-3 py-1 text-xs font-mono text-f1-cyan rounded border border-f1-cyan/30">
+                            AI / LLM
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">RAG System + LoRA</h3>
+                        <p class="text-f1-muted text-sm mb-4">
+                            Deployed a GPT-based assistant over a 15.8M node knowledge graph. Fine-tuned LoRA models locally to improve domain-specific accuracy for engineering queries.
+                        </p>
+                        <div class="flex items-center text-f1-blue font-mono text-xs group-hover:translate-x-2 transition-transform cursor-pointer">
+                            <span>VIEW_ARCHITECTURE</span> <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-f1-panel rounded-xl overflow-hidden border border-white/5 hover:border-f1-cyan/50 transition-all duration-300">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="assets/img/rust-cli-alpine.png" alt="Rust CLI" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur px-3 py-1 text-xs font-mono text-f1-accent rounded border border-f1-accent/30">
+                            RUST / SYSTEM
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">High-Perf ETL CLI</h3>
+                        <p class="text-f1-muted text-sm mb-4">
+                            Built a memory-efficient multithreading command-line tool in Rust to accelerate critical ETL workflows, seamlessly integrated with Azure Data Factory.
+                        </p>
+                        <div class="flex items-center text-f1-blue font-mono text-xs group-hover:translate-x-2 transition-transform cursor-pointer">
+                            <span>INSPECT_CODE</span> <i class="fas fa-terminal ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-f1-panel/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 border border-white/5 rounded bg-f1-panel hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-shield-alt text-f1-cyan text-2xl mb-4"></i>
+                    <h4 class="font-bold text-white mb-2">Governance by Design</h4>
+                    <p class="text-sm text-f1-muted">Achieved <strong>80% classified data coverage</strong> using OpenMetadata & policy-as-code.</p>
+                </div>
+                <div class="p-6 border border-white/5 rounded bg-f1-panel hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-chart-line text-f1-cyan text-2xl mb-4"></i>
+                    <h4 class="font-bold text-white mb-2">FinOps Discipline</h4>
+                    <p class="text-sm text-f1-muted">Optimized £1.2M cloud credits with <strong>~£150k actual spend</strong> via aggressive spot instance usage.</p>
+                </div>
+                <div class="p-6 border border-white/5 rounded bg-f1-panel hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-users-cog text-f1-cyan text-2xl mb-4"></i>
+                    <h4 class="font-bold text-white mb-2">Hybrid Leadership</h4>
+                    <p class="text-sm text-f1-muted">Bridging the gap between C-level strategy boards and low-level engineering implementation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="py-20 bg-f1-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div>
+                <h3 class="text-xl font-bold mb-8 flex items-center text-white">
+                    <i class="fas fa-graduation-cap text-f1-blue mr-3"></i> Education
+                </h3>
+                <div class="space-y-8">
+                    <div class="border-l-2 border-slate-700 pl-6 relative">
+                        <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <h4 class="text-white font-bold text-lg">Tongji University, Shanghai</h4>
+                        <div class="text-f1-cyan text-sm font-mono mb-2">MSc Industrial & Mechanical Engineering</div>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Research on U-shaped assembly line balancing (U-ALBP). <br>
+                            Recipient of the <strong>CSC Government Excellence Scholarship</strong>.
+                        </p>
+                    </div>
+                    <div class="border-l-2 border-slate-700 pl-6 relative">
+                        <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-500"></div>
+                        <h4 class="text-white font-bold text-lg">Arts & Métiers ParisTech</h4>
+                        <div class="text-f1-cyan text-sm font-mono mb-2">Master’s Degree in General Engineering</div>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            One of France’s leading Grande École. Focus on industrial excellence, applied sciences, and mechanical systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-8 flex items-center text-white">
+                    <i class="fas fa-code text-f1-cyan mr-3"></i> Core Stack
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-f1-panel p-5 rounded border border-white/5 hover:border-f1-blue/30 transition-colors">
+                        <div class="text-xs font-mono text-f1-blue mb-3 font-bold">INFRASTRUCTURE</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Azure</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Terraform</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Docker</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Kubernetes</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Ansible</span>
+                        </div>
+                    </div>
+                    <div class="bg-f1-panel p-5 rounded border border-white/5 hover:border-f1-blue/30 transition-colors">
+                        <div class="text-xs font-mono text-f1-cyan mb-3 font-bold">DATA & AI</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Databricks</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Spark</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Kafka</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Python</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">SQL</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Rust</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">OpenMetadata</span>
+                        </div>
+                    </div>
+                    <div class="bg-f1-panel p-5 rounded border border-white/5 hover:border-f1-blue/30 transition-colors sm:col-span-2">
+                        <div class="text-xs font-mono text-f1-accent mb-3 font-bold">ARCHITECTURE</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Lakehouse</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">Hub-and-Spoke</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">FinOps</span>
+                            <span class="text-sm text-white bg-black/30 px-2 py-1 rounded">DevSecOps</span>
+                        </div>
+                    </div>
+                    <div class="bg-f1-panel p-5 rounded border border-white/5 sm:col-span-2">
+                        <div class="text-xs font-mono text-slate-500 mb-3 font-bold">LANGUAGES</div>
+                        <div class="flex justify-between items-center text-sm text-slate-300">
+                            <span class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>French (Native)</span>
+                            <span class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>English (Fluent)</span>
+                            <span class="flex items-center"><span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>Mandarin (Intermediate)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-12 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-lg font-bold text-white mb-6">Personal Interests</h3>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="px-6 py-3 bg-f1-panel border border-white/5 rounded-full text-slate-300 hover:border-f1-blue transition-colors flex items-center">
+                    <i class="fas fa-camera text-f1-cyan mr-3"></i>
+                    <span>Photography (Fujifilm X-Pro2)</span>
+                </div>
+                <div class="px-6 py-3 bg-f1-panel border border-white/5 rounded-full text-slate-300 hover:border-f1-blue transition-colors flex items-center">
+                    <i class="fas fa-dumbbell text-f1-cyan mr-3"></i>
+                    <span>Powerlifting (560kg Total)</span>
+                </div>
+                <div class="px-6 py-3 bg-f1-panel border border-white/5 rounded-full text-slate-300 hover:border-f1-blue transition-colors flex items-center">
+                    <i class="fas fa-bicycle text-f1-cyan mr-3"></i>
+                    <span>Cycling (Paris Commute)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm font-mono">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 Loïc Bélec. All systems nominal.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="mailto:network@loicbelec.com" class="hover:text-f1-cyan transition-colors">Email</a>
+                <a href="https://www.linkedin.com/in/loicbelec" class="hover:text-f1-cyan transition-colors">LinkedIn</a>
+                <a href="https://github.com/loicbelec" class="hover:text-f1-cyan transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Typewriter Effect (Hero)
+        const textToType = ["Architecting for Speed.", "Governing PFLOP-Scale Compute.", "Optimizing Hybrid Clouds."];
+        let typeIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeSpeed = 50;
+        const deleteSpeed = 30;
+        const pauseTime = 2500;
+        const typeTarget = document.getElementById('typewriter');
+
+        function typeWriter() {
+            const currentText = textToType[typeIndex];
+            
+            if (isDeleting) {
+                typeTarget.innerText = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typeTarget.innerText = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let nextSpeed = isDeleting ? deleteSpeed : typeSpeed;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                nextSpeed = pauseTime;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                typeIndex = (typeIndex + 1) % textToType.length;
+                nextSpeed = 500;
+            }
+
+            setTimeout(typeWriter, nextSpeed);
+        }
+        
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // 2. Precision Counter Animation (Supports decimals)
+        const counters = document.querySelectorAll('.counter');
+        const observerOptions = { threshold: 0.5 };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const targetText = counter.getAttribute('data-target'); // "3.2"
+                    const target = parseFloat(targetText);
+                    
+                    // Determine number of decimal places based on the string
+                    const decimalPlaces = targetText.includes('.') ? targetText.split('.')[1].length : 0;
+                    
+                    const duration = 2000; // 2 seconds
+                    const startTime = performance.now();
+
+                    function updateCount(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        
+                        // Ease Out Cubic
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        
+                        const currentVal = (target * easeOut);
+                        counter.innerText = currentVal.toFixed(decimalPlaces);
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = targetText; // Ensure exact final match
+                        }
+                    }
+                    requestAnimationFrame(updateCount);
+                    observer.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+</body>
 </html>
