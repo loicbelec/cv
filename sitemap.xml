@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://loicbelec.com/</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    
+    <image:image>
+      <image:loc>https://loicbelec.com/assets/img/profile-large.jpg</image:loc>
+      <image:title>Loïc Bélec - Principal Cloud & Data Architect</image:title>
+      <image:caption>Principal Cloud & Data Architect at Alpine Racing</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://loicbelec.com/assets/img/lora-bot.png</image:loc>
+      <image:title>RAG System Architecture with LoRA</image:title>
+      <image:caption>AI Robot optimizing domain data for engineering queries</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://loicbelec.com/assets/img/rust-cli-bot.png</image:loc>
+      <image:title>Pitgun High-Performance Data Engine</image:title>
+      <image:caption>Rust-based CLI for high-performance data workflows</image:caption>
+    </image:image>
+  </url>
+</urlset>
