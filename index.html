@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loïc Bélec | Cloud & Data Architect</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="F1-grade Data Architect. Managing PFLOP-scale compute and hybrid cloud platforms.">
-    
+    <meta name="description" content="Loïc Bélec, Principal Cloud & Data Architect based in Paris. Expert in Azure, HPC, and real-time telemetry systems for Formula 1.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://loicbelec.com/">
+    <meta property="og:title" content="Loïc Bélec | Cloud & Data Architect">
+    <meta property="og:description" content="Principal Architect specializing in high-performance data platforms, Azure hybrid cloud, and F1 telemetry systems.">
+    <meta property="og:image" content="https://loicbelec.com/assets/img/profile-large.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loïc Bélec | Cloud & Data Architect">
+    <meta name="twitter:description" content="Principal Architect specializing in high-performance data platforms, Azure hybrid cloud, and F1 telemetry systems.">
+    <meta name="twitter:image" content="https://loicbelec.com/assets/img/profile-large.jpg">
+
+    <link rel="canonical" href="https://loicbelec.com/">
+
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,6 +93,40 @@
             border-color: rgba(0, 144, 255, 0.3);
         }
     </style>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Loïc Bélec",
+    "jobTitle": "Principal Cloud & Data Architect",
+    "url": "https://loicbelec.com",
+    "image": "https://loicbelec.com/assets/img/profile-large.jpg",
+    "sameAs": [
+        "https://www.linkedin.com/in/loicbelec",
+        "https://github.com/loicbelec"
+    ],
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Alpine Racing"
+    },
+    "alumniOf": [
+        {
+        "@type": "CollegeOrUniversity",
+        "name": "Arts & Métiers ParisTech"
+        },
+        {
+        "@type": "CollegeOrUniversity",
+        "name": "Tongji University"
+        }
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "France"
+    },
+    "knowsAbout": ["Azure", "Data Architecture", "Formula 1", "High Performance Computing", "FinOps", "Rust", "Python"]
+    }
+    </script>
 </head>
 <body class="bg-f1-dark text-f1-text font-sans antialiased overflow-x-hidden selection:bg-f1-blue selection:text-white">
 
@@ -230,7 +276,7 @@
     <section id="experience" class="py-24 max-w-5xl mx-auto px-4 sm:px-6">
         <div class="mb-16">
             <h2 class="text-3xl font-bold mb-2">Career Telemetry</h2>
-            <p class="text-f1-muted">A timeline of escalating complexity:<br />From engine metrics to enterprise architecture.</p>
+            <p class="text-f1-muted">A professional timeline of escalating complexity:<br />From engine metrics to enterprise architecture.</p>
         </div>
 
         <div class="relative border-l-2 border-slate-800 ml-3 md:ml-6 space-y-16">
@@ -377,7 +423,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="group relative bg-f1-panel rounded-xl overflow-hidden border border-white/5 hover:border-f1-cyan/50 transition-all duration-300">
                     <div class="h-48 bg-slate-800 relative overflow-hidden">
-                        <img src="assets/img/lora-alpine.png" alt="RAG System" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <img src="assets/img/lora-alpine-large.png" alt="Architecture diagram of a RAG System with LoRA on Azure" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                         <div class="absolute top-4 right-4 bg-black/70 backdrop-blur px-3 py-1 text-xs font-mono text-f1-cyan rounded border border-f1-cyan/30">
                             AI / LLM
                         </div>
@@ -395,19 +441,21 @@
 
                 <div class="group relative bg-f1-panel rounded-xl overflow-hidden border border-white/5 hover:border-f1-cyan/50 transition-all duration-300">
                     <div class="h-48 bg-slate-800 relative overflow-hidden">
-                        <img src="assets/img/rust-cli-alpine.png" alt="Rust CLI" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                        <img src="assets/img/rust-cli-alpine-large.png" alt="Pitgun Engine" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                         <div class="absolute top-4 right-4 bg-black/70 backdrop-blur px-3 py-1 text-xs font-mono text-f1-accent rounded border border-f1-accent/30">
-                            RUST / SYSTEM
+                            RUST / DATA ENGINE
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">High-Perf ETL CLI</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">Pitgun — High-Performance Data Engine</h3>
                         <p class="text-f1-muted text-sm mb-4">
-                            Built a memory-efficient multithreading command-line tool in Rust to accelerate critical ETL workflows, seamlessly integrated with Azure Data Factory.
+                            Designing and building <span class="text-white">Pitgun</span>, a high-performance data engine written in Rust to ingest, normalize and compute time-series data at scale.
+                            Inspired by Formula 1 telemetry, HPC and financial systems, Pitgun introduces canonical data models, AST-driven formulas and manifest-based pipelines.
                         </p>
-                        <div class="flex items-center text-f1-blue font-mono text-xs group-hover:translate-x-2 transition-transform cursor-pointer">
-                            <span>INSPECT_CODE</span> <i class="fas fa-terminal ml-2"></i>
-                        </div>
+                        <a href="https://pitgun.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-f1-blue font-mono text-xs group-hover:translate-x-2 transition-transform cursor-pointer">
+                        <span>EXPLORE_PITGUN</span>
+                        <i class="fas fa-bolt ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
