@@ -141,8 +141,11 @@
                     <div class="ml-10 flex items-baseline space-x-8 font-mono text-xs tracking-wider">
                         <a href="#key-figures" class="hover:text-f1-cyan transition-colors">METRICS</a>
                         <a href="#experience" class="hover:text-f1-cyan transition-colors">CAREER_TELEMETRY</a>
-                        <a href="#projects" class="hover:text-f1-cyan transition-colors">PROTOTYPES</a>
+                        <a href="#projects" class="hover:text-f1-cyan transition-colors">LABS</a>
                         <a href="#stack" class="hover:text-f1-cyan transition-colors">STACK</a>
+                        <a href="assets/BELEC-Loic_CV_EN_2025.pdf" download class="hover:text-f1-cyan transition-colors flex items-center">
+                            <i class="fas fa-download mr-2 text-xs"></i> GET_LOGS
+                        </a>
                         <a href="mailto:network@loicbelec.com" class="border border-f1-blue text-f1-blue px-4 py-2 rounded hover:bg-f1-blue hover:text-white transition-all">
                             INIT_CONTACT
                         </a>
@@ -179,11 +182,16 @@
                     I design the nervous systems of high-performance organizations. From <strong>factory-to-cloud connectivity</strong> to <strong>PFLOP-scale compute</strong>, I build platforms where performance, reliability, and governance coexist under race-day constraints.
                 </p>
 
-                <div class="flex gap-4">
+                <div class="flex flex-wrap gap-4">
                     <a href="#experience" class="bg-f1-blue text-white px-8 py-3 rounded font-medium hover:bg-blue-600 transition-colors shadow-[0_0_20px_rgba(0,144,255,0.3)]">
                         View Telemetry
                     </a>
-                    <a href="https://www.linkedin.com/in/loicbelec" target="_blank" class="border border-slate-600 text-slate-300 px-8 py-3 rounded font-medium hover:border-f1-cyan hover:text-f1-cyan transition-colors flex items-center">
+                    
+                    <a href="assets/BELEC-Loic_CV_EN_2025.pdf" download="BELEC-Loic_CV_EN_2025.pdf" class="group border border-f1-cyan text-f1-cyan px-8 py-3 rounded font-medium hover:bg-f1-cyan hover:text-f1-dark transition-all duration-300 flex items-center shadow-[0_0_15px_rgba(0,240,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.4)]">
+                        <i class="fas fa-file-download mr-2 group-hover:animate-bounce"></i> Export CV
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/loicbelec" target="_blank" class="border border-slate-600 text-slate-300 px-8 py-3 rounded font-medium hover:border-white hover:text-white transition-colors flex items-center">
                         <i class="fab fa-linkedin mr-2"></i> Network
                     </a>
                 </div>
@@ -418,7 +426,7 @@
         <div class="absolute -right-20 top-20 w-96 h-96 bg-f1-blue/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 class="text-3xl font-bold mb-12">Recent Prototypes</h2>
+            <h2 class="text-3xl font-bold mb-12">R&D & Engineering Labs</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="group relative bg-f1-panel rounded-xl overflow-hidden border border-white/5 hover:border-f1-cyan/50 transition-all duration-300">
@@ -429,13 +437,17 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">RAG System + LoRA</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">Graph-RAG System + LoRA</h3>
                         <p class="text-f1-muted text-sm mb-4">
-                            Deployed a GPT-based assistant over a 15.8M node knowledge graph. Fine-tuned LoRA models locally to improve domain-specific accuracy for engineering queries.
+                            Deployed an <strong>LLM-powered agent</strong> over a 15.8M node knowledge graph. 
+                            Fine-tuned LoRA adapters locally to maximize precision on complex engineering queries without exposing IP.
                         </p>
-                        <div class="flex items-center text-f1-blue font-mono text-xs group-hover:translate-x-2 transition-transform cursor-pointer">
-                            <span>VIEW_ARCHITECTURE</span> <i class="fas fa-arrow-right ml-2"></i>
-                        </div>
+                        
+                        <a href="mailto:network@loicbelec.com?subject=Question%20about%20Graph-RAG%20Architecture" class="flex items-center text-f1-blue font-mono text-xs group-hover:translate-x-2 transition-transform cursor-pointer">
+                            <i class="fas fa-lock mr-2 text-f1-cyan/70"></i> 
+                            <span>ASK_DETAILS</span> 
+                            <i class="fas fa-envelope ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
