@@ -2,6 +2,7 @@ Options -MultiViews
 
 RewriteEngine On
 
-# Canonical executive route without extension.
-RewriteRule ^executive\.html$ /executive [R=301,L]
-RewriteRule ^executive/?$ executive.html [L]
+# Let HTML pages be reached without typing the .html extension.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
