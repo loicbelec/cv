@@ -1,0 +1,7 @@
+Options -MultiViews
+
+RewriteEngine On
+
+# Canonical executive route without extension.
+RewriteRule ^executive\.html$ /executive [R=301,L]
+RewriteRule ^executive/?$ executive.html [L]

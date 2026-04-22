@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://loicbelec.com/</loc>
-    <lastmod>2025-12-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     
@@ -24,5 +24,12 @@
       <image:title>Pitgun High-Performance Data Engine</image:title>
       <image:caption>Rust-based CLI for high-performance data workflows</image:caption>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://loicbelec.com/executive</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
